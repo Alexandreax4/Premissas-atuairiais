@@ -394,13 +394,34 @@
 
     </div>
 
-    <div class="cta">
-    
-      <a href="javascript:history.back()">
-        Voltar para a Simulação
-      </a>
-    
-    </div>
+<div class="cta">
+
+  <button onclick="window.history.back()" class="back-btn">
+    Voltar para a Simulação
+  </button>
+
+</div>
+
+<style>
+
+.back-btn{
+  background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);
+  color:#fff;
+  border:none;
+  padding:18px 34px;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
+</style>
 
     <div class="footer">
 
