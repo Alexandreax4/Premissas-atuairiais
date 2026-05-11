@@ -1,123 +1,421 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premissas Atuariais</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Premissas Atuariais - PETROS</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#f4f7f6;
+      font-family:Arial, Helvetica, sans-serif;
+      color:#222;
+      padding:24px;
+    }
+
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);
+      padding:42px;
+      color:#fff;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,0.15);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:34px;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      font-size:16px;
+      line-height:1.8;
+      max-width:760px;
+      opacity:0.96;
+    }
+
+    .content{
+      padding:38px;
+    }
+
+    .intro{
+      background:#eef7f5;
+      border-left:6px solid #0b6b5c;
+      padding:24px;
+      border-radius:12px;
+      margin-bottom:30px;
+      line-height:1.8;
+      color:#333;
+    }
+
+    .section-title{
+      color:#0b6b5c;
+      font-size:28px;
+      font-weight:bold;
+      margin-bottom:24px;
+    }
+
+    .premissa-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:22px;
+      margin-bottom:30px;
+    }
+
+    .premissa-card{
+      background:#fff;
+      border:1px solid #e6ecea;
+      border-left:6px solid #0b6b5c;
+      border-radius:14px;
+      padding:24px;
+      transition:0.2s;
+    }
+
+    .premissa-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .premissa-card h3{
+      color:#0b6b5c;
+      font-size:20px;
+      margin-bottom:14px;
+    }
+
+    .premissa-card p{
+      line-height:1.8;
+      color:#444;
+      font-size:15px;
+    }
+
+    .table-section{
+      background:#f9fcfb;
+      border:1px solid #e5ecea;
+      border-radius:14px;
+      overflow:hidden;
+      margin-top:20px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th{
+      background:#0b6b5c;
+      color:#fff;
+      padding:18px;
+      text-align:left;
+      font-size:14px;
+    }
+
+    td{
+      padding:18px;
+      border-bottom:1px solid #e5ecea;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    tr:nth-child(even){
+      background:#f7fbfa;
+    }
+
+    .highlight{
+      margin-top:34px;
+      background:linear-gradient(135deg,#eef7f5 0%, #f8fcfb 100%);
+      border-left:6px solid #00A98F;
+      padding:28px;
+      border-radius:14px;
+      line-height:1.9;
+      color:#333;
+    }
+
+    .footer{
+      margin-top:40px;
+      padding-top:26px;
+      border-top:1px solid #ddd;
+      color:#666;
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    .cta{
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .cta a{
+      display:inline-block;
+      background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);
+      color:#fff;
+      text-decoration:none;
+      padding:18px 34px;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .cta a:hover{
+      transform:translateY(-2px);
+      opacity:0.95;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:12px;
+      }
+
+      .hero{
+        padding:28px;
+      }
+
+      .hero h1{
+        font-size:28px;
+      }
+
+      .content{
+        padding:24px;
+      }
+
+      .premissa-grid{
+        grid-template-columns:1fr;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+      }
+
+    }
+
+  </style>
 </head>
 
-<body style="margin:0; background:#f4f7f6; font-family:Arial, Helvetica, sans-serif;">
+<body>
 
-<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f7f6">
-<tr>
-<td align="center">
+<div class="container">
 
-<table width="720" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-top:40px;">
+  <div class="hero">
 
-<!-- HEADER COM LOGO AJUSTADO -->
-<tr>
-<td style="padding:28px 24px 20px 24px;" align="center">
+    <div class="badge">
+      Plano Petros 2
+    </div>
 
-<table cellpadding="0" cellspacing="0">
-<tr>
-<td align="center">
+    <h1>
+      Premissas Atuariais
+    </h1>
 
-<img src="https://www2.petros.com.br/image/layout_set_logo?img_id=2411854&t=1777918328191"
-alt="Logo Petros"
-width="180"
-style="display:block; border:0; outline:none; text-decoration:none;">
+    <p>
+      Conheça as premissas utilizadas nas projeções da campanha de revisão contributiva
+      e entenda os fatores considerados nas simulações previdenciárias.
+    </p>
 
-</td>
-</tr>
-</table>
+  </div>
 
-</td>
-</tr>
+  <div class="content">
 
-<!-- LINHA INSTITUCIONAL -->
-<tr>
-<td style="height:3px; background:#0b6b5c;"></td>
-</tr>
+    <div class="intro">
 
-<tr>
-<td style="padding:32px;">
+      As projeções apresentadas possuem caráter exclusivamente informativo
+      e foram desenvolvidas com base nas premissas atuariais vigentes na data da simulação.
 
-<!-- TÍTULO -->
-<table width="100%">
-<tr>
-<td style="color:#0b6b5c; font-size:24px; font-weight:bold; padding-bottom:16px;">
-Premissas Atuariais Utilizadas
-</td>
-</tr>
-</table>
+      <br><br>
 
-<!-- INTRO -->
-<table width="100%">
-<tr>
-<td style="font-size:14px; color:#333333; line-height:1.6; padding-bottom:20px;">
-As projeções apresentadas consideram as seguintes premissas atuariais:
-</td>
-</tr>
-</table>
+      Os resultados não representam garantia de benefício futuro,
+      podendo sofrer alterações conforme mudanças econômicas,
+      atuariais e regulamentares.
 
-<!-- LISTA -->
-<table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px; line-height:1.6; color:#333333;">
+    </div>
 
-<tr>
-<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
-• Crescimento salarial específico para cada patrocinadora
-</td>
-</tr>
+    <div class="section-title">
+      Premissas Atuariais Utilizadas
+    </div>
 
-<tr>
-<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
-• Evolução do saldo atual até a data prevista de aposentadoria, considerando a taxa de juros do plano de <strong>4,5% ao ano</strong>
-</td>
-</tr>
+    <div class="premissa-grid">
 
-<tr>
-<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
-• Evolução das contribuições ao longo do tempo remanescente até a aposentadoria, com aplicação da taxa de juros de <strong>4,5% ao ano</strong>
-</td>
-</tr>
+      <div class="premissa-card">
 
-<tr>
-<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
-• Cálculo do Valor Assegurado considerando o tempo de permanência no plano até a aposentadoria
-</td>
-</tr>
+        <h3>
+          Crescimento Salarial
+        </h3>
 
-<tr>
-<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
-• Benefício básico obtido pela multiplicação do saldo pelo fator atuarial na data de aposentadoria, comparado ao Valor Assegurado
-</td>
-</tr>
+        <p>
+          Crescimento salarial específico para cada patrocinadora,
+          utilizado para estimar a evolução contributiva ao longo do tempo.
+        </p>
 
-<tr>
-<td style="padding:12px 0;">
-• Benefício variável calculado pela multiplicação do saldo pelo fator atuarial na data de aposentadoria
-</td>
-</tr>
+      </div>
 
-</table>
+      <div class="premissa-card">
 
-<!-- FOOTER -->
-<table width="100%" style="margin-top:30px;">
-<tr>
-<td style="font-size:12px; color:#777777; border-top:1px solid #dddddd; padding-top:16px;">
-As premissas podem ser atualizadas conforme alterações regulamentares ou atuariais do plano.
-</td>
-</tr>
-</table>
+        <h3>
+          Taxa de Juros do Plano
+        </h3>
 
-</td>
-</tr>
+        <p>
+          Evolução do saldo previdenciário considerando
+          taxa de juros real de 4,5% ao ano.
+        </p>
 
-</table>
+      </div>
 
-</td>
-</tr>
-</table>
+      <div class="premissa-card">
+
+        <h3>
+          Evolução das Contribuições
+        </h3>
+
+        <p>
+          Projeção da acumulação futura das contribuições
+          até a data prevista de aposentadoria.
+        </p>
+
+      </div>
+
+      <div class="premissa-card">
+
+        <h3>
+          Valor Assegurado
+        </h3>
+
+        <p>
+          Consideração do período de permanência no plano
+          para estimativa do valor assegurado.
+        </p>
+
+      </div>
+
+      <div class="premissa-card">
+
+        <h3>
+          Benefício Básico
+        </h3>
+
+        <p>
+          Cálculo considerando fator atuarial
+          e comparação com o valor assegurado.
+        </p>
+
+      </div>
+
+      <div class="premissa-card">
+
+        <h3>
+          Benefício Variável
+        </h3>
+
+        <p>
+          Benefício projetado com base
+          no saldo acumulado do participante.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="table-section">
+
+      <table>
+
+        <tr>
+          <th>Premissa</th>
+          <th>Detalhamento</th>
+        </tr>
+
+        <tr>
+          <td>Crescimento Salarial</td>
+          <td>
+            Crescimento salarial específico por patrocinadora.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Taxa de Juros</td>
+          <td>
+            Rentabilidade atuarial projetada de 4,5% ao ano.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Contribuições Futuras</td>
+          <td>
+            Evolução das contribuições até a aposentadoria.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Fator Atuarial</td>
+          <td>
+            Utilizado para cálculo do benefício previdenciário.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Saldo Previdenciário</td>
+          <td>
+            Acumulação do patrimônio considerando contribuições e juros.
+          </td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div class="highlight">
+
+      Pequenas alterações no percentual de contribuição
+      podem gerar impactos relevantes no saldo acumulado
+      e na renda estimada de aposentadoria ao longo do tempo,
+      especialmente devido ao efeito da capitalização composta.
+
+    </div>
+
+    <div class="cta">
+
+      <a href="./index.html">
+        Voltar para a Simulação
+      </a>
+
+    </div>
+
+    <div class="footer">
+
+      Esta página possui caráter exclusivamente informativo.
+
+      <br><br>
+
+      As premissas podem sofrer alterações conforme mudanças
+      regulamentares, econômicas e atuariais do plano.
+
+    </div>
+
+  </div>
+
+</div>
 
 </body>
 </html>
