@@ -1,54 +1,120 @@
-<!-- BOTÃO DA premissas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premissas Atuariais</title>
+</head>
 
-<div class="cta">
+<body style="margin:0; background:#f4f7f6; font-family:Arial, Helvetica, sans-serif;">
 
-  <button onclick="voltarSimulacao()" class="back-btn">
-    Voltar para a Simulação
-  </button>
+<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f7f6">
+<tr>
+<td align="center">
 
-</div>
+<table width="720" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-top:40px;">
 
+<!-- HEADER COM LOGO AJUSTADO -->
+<tr>
+<td style="padding:28px 24px 20px 24px;" align="center">
 
-<style>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
 
-.back-btn{
-  background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);
-  color:#fff;
-  border:none;
-  padding:18px 34px;
-  border-radius:10px;
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
-  transition:0.2s;
-}
+https://www2.petros.com.br/image/layout_set_logo?img_id=2411854&t=1777918328191
 
-.back-btn:hover{
-  transform:translateY(-2px);
-  opacity:0.95;
-}
+</td>
+</tr>
+</table>
 
-</style>
+</td>
+</tr>
 
+<!-- LINHA INSTITUCIONAL -->
+<tr>
+<td style="height:3px; background:#0b6b5c;"></td>
+</tr>
 
-<script>
+<tr>
+<td style="padding:32px;">
 
-function voltarSimulacao(){
+<!-- TÍTULO -->
+<table width="100%">
+<tr>
+<td style="color:#0b6b5c; font-size:24px; font-weight:bold; padding-bottom:16px;">
+Premissas Atuariais Utilizadas
+</td>
+</tr>
+</table>
 
-  const params = new URLSearchParams(window.location.search);
+<!-- INTRO -->
+<table width="100%">
+<tr>
+<td style="font-size:14px; color:#333333; line-height:1.6; padding-bottom:20px;">
+As projeções apresentadas consideram as seguintes premissas atuariais:
+</td>
+</tr>
+</table>
 
-  const voltar = params.get("voltar");
+<!-- LISTA -->
+<table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px; line-height:1.6; color:#333333;">
 
-  if(voltar){
+<tr>
+<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
+• Crescimento salarial específico para cada patrocinadora
+</td>
+</tr>
 
-    window.location.href = decodeURIComponent(voltar);
+<tr>
+<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
+• Evolução do saldo atual até a data prevista de aposentadoria, considerando a taxa de juros do plano de <strong>4,5% ao ano</strong>
+</td>
+</tr>
 
-  }else{
+<tr>
+<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
+• Evolução das contribuições ao longo do tempo remanescente até a aposentadoria, com aplicação da taxa de juros de <strong>4,5% ao ano</strong>
+</td>
+</tr>
 
-    window.location.href = "index.html";
+<tr>
+<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
+• Cálculo do Valor Assegurado considerando o tempo de permanência no plano até a aposentadoria
+</td>
+</tr>
 
-  }
+<tr>
+<td style="padding:12px 0; border-bottom:1px solid #eeeeee;">
+• Benefício básico obtido pela multiplicação do saldo pelo fator atuarial na data de aposentadoria, comparado ao Valor Assegurado
+</td>
+</tr>
 
-}
+<tr>
+<td style="padding:12px 0;">
+• Benefício variável calculado pela multiplicação do saldo pelo fator atuarial na data de aposentadoria
+</td>
+</tr>
 
-</script>
+</table>
+
+<!-- FOOTER -->
+<table width="100%" style="margin-top:30px;">
+<tr>
+<td style="font-size:12px; color:#777777; border-top:1px solid #dddddd; padding-top:16px;">
+As premissas podem ser atualizadas conforme alterações regulamentares ou atuariais do plano.
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
