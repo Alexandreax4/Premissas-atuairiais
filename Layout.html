@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"/>
+  <title>
+    Simulação PETROS
+  </title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    body{
+      background:#f4f7f6;
+      font-family:Arial, Helvetica, sans-serif;
+      color:#222;
+      padding:24px;
+    }
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    .hero{
+	  /*background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);*/
+      //background:#021832;
+background: linear-gradient(135deg, #021832 0%, #0b6b5c 60%, #00A98F 100%);
+      padding:42px;
+      color:#fff;
+    }
+    .hero h1{
+      font-size:30px;
+      margin-bottom:14px;
+      text-align: center;
+    }
+    .hero p{
+      line-height:1.8;
+      font-size:16px;
+      opacity:0.96;
+    }
+    .content{
+      padding:38px;
+    }
+    .intro{
+      margin-bottom:28px;
+      line-height:1.8;
+      color:#333;
+    }
+    .highlight-box{
+      background:#eef7f5;
+      border-left:6px solid #0b6b5c;
+      padding:24px;
+      border-radius:12px;
+      margin-bottom:26px;
+      line-height:1.8;
+      text-align: justify
+    }
+    .section-title{
+      color:#0b6b5c;
+      font-size:28px;
+      font-weight:bold;
+      margin-bottom:22px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #e5ecea;
+      border-left:5px solid #0b6b5c;
+      border-radius:14px;
+      padding:24px;
+      margin-bottom:24px;
+    }
+
+    .card h3{
+      color:#0b6b5c;
+      margin-bottom:16px;
+      font-size:22px;
+    }
+
+    .label{
+      margin-bottom:8px;
+      font-size:14px;
+    }
+
+    .bar-bg{
+      width:100%;
+      height:16px;
+      background:#dfeeed;
+      border-radius:999px;
+      overflow:hidden;
+      margin-bottom:10px;
+    }
+
+    .bar-fill{
+      height:100%;
+      background:#0b6b5c;
+    }
+
+    .bar-fill-secondary{
+      height:100%;
+      background:#00A98F;
+    }
+
+    .bar-fill-light{
+      height:100%;
+      background:#6fb7ab;
+    }
+
+    .value{
+      font-size:14px;
+      margin-top:6px;
+      color:#444;
+
+    }
+
+    .cta{
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .cta a{
+      display:inline-block;
+      background:linear-gradient(135deg,#0b6b5c 0%, #00A98F 100%);
+      color:#fff;
+      text-decoration:none;
+      padding:18px 34px;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .cta a:hover{
+      transform:translateY(-2px);
+      opacity:0.95;
+    }
+
+    .footer{
+      margin-top:40px;
+      padding-top:26px;
+      border-top:1px solid #ddd;
+      color:#666;
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:12px;
+      }
+
+      .hero{
+        padding:28px;
+      }
+
+      .hero h1{
+        font-size:28px;
+      }
+
+      .content{
+        padding:24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+	
+<div style="float: left; padding: 40px;"><img src="https://informativos.petros.com.br/campanhas/informativo/2026/revisao_contribuicao/logo_petros.png" /></div>
+	
+  <div class="hero">
+    <h1>
+      Ainda não contribui pelo percentual máximo? 
+      <BR> Confira sua simulação
+    </h1>
+  </div>
+
+  <div class="content">
+
+    <div class="intro">
+
+
+      <p style="margin-bottom:16px;">
+      Você sabia que um ajuste hoje pode fazer uma grande diferença no seu futuro?
+      </p>
+
+    </div>
+
+    <div class="highlight-box">
+
+      Atualmente, você contribui com
+      <strong id="contribuicaoTexto">7%</strong>,
+      podendo aumentar esse percentual para
+      <strong id="maximoTexto">9%</strong>.
+	Pode parecer uma mudança pequena, mas, com o tempo, esse ajuste faz grande diferença no valor acumulado e na renda que você poderá receber no futuro.
+<br>Isso acontece porque sua contribuição não vem sozinha. A cada real que você coloca no plano, a patrocinadora coloca o mesmo valor.<BR>
+	Na prática, quanto mais você contribui hoje, maior pode ser sua renda no futuro .
+
+    </div>
+
+    <p style="font-size:15px; line-height:1.8; margin-bottom:30px;">
+
+      Confira abaixo a simulação.
+
+
+
+    <div class="section-title">
+      Simulações¹
+    </div>
+
+     <div class="card">
+
+      <h3>
+        Impacto no saldo da sua conta individual
+      </h3>
+
+      <div class="label">
+        Saldo projetado com o percentual de <strong>contribuição atual</strong>
+      </div>
+
+      <div class="bar-bg">
+        <div class="bar-fill-light"
+             id="barraSaldoAtual"
+             style="width:66%">
+        </div>
+      </div>
+
+      <div class="value"
+           id="saldoAtual">
+
+        R$ 1.090.821,65
+
+      </div>
+
+      <br>
+
+    <div class="label">        
+         Saldo projetado com o percentual <strong>contribuição máximo</strong>      
+    </div>
+
+      <div class="bar-bg">
+        <div class="bar-fill-light"
+             style="width:100%">
+        </div>
+      </div>
+
+      <div class="value"
+           id="saldoMax">
+
+        R$ 1.645.427,48
+
+    //  </div>	<div class="value" id="fraseSaldo"></div>
+    </div>
+
+  <div class="card">
+
+      <h3>
+        Impacto no valor de benefício de aposentadoria
+      </h3>
+
+      <div class="label">
+        Benefício projetado com o percentual de <strong>contribuição atual</strong>
+      </div>
+
+      <div class="bar-bg">
+        <div class="bar-fill"
+             id="barraBeneficioAtual"
+             style="width:66%">
+        </div>
+      </div>
+
+      <div class="value"
+           id="beneficioAtual">
+
+        R$ 5.459,26
+
+      </div>
+
+      <br>
+
+      <div class="label">
+        Benefício projetado com o percentual de <strong>contribuição máximo</strong>
+      </div>
+
+      <div class="bar-bg">
+        <div class="bar-fill-secondary"
+             style="width:100%">
+        </div>
+      </div>
+
+      <div class="value"
+           id="beneficioMax">
+
+        R$ 8.234,90
+
+      </div>
+	<div class="value" id="fraseBeneficio"></div>
+    </div>
+
+
+
+    <div class="cta">
+
+      <a href="https://app4.petros.com.br/action/cli/3927/108195/20600185/17673253/291169">
+        Quero saber mais sobre a revisão contributiva
+      </a>
+
+    </div>
+
+    <div class="footer">
+
+¹ Esta comunicação é meramente informativa. A alteração do percentual de contribuição segue as regras previstas no regulamento do plano. As projeções consideram o crescimento salarial adotado nas hipóteses atuariais definidas anualmente, a atualização do saldo pela taxa de juros do plano (4,5% ao ano) e as novas contribuições até a data estimada de aposentadoria, além do fator atuarial aplicado ao cálculo do benefício projetado na modalidade de renda vitalícia.
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+  const params = new URLSearchParams(window.location.search);
+
+  //const nome =    params.get("nome") || "Participante";
+
+  const contribuicao =
+    parseFloat(params.get("contribuicao")) || 7;
+
+  const maximo =
+    parseFloat(params.get("maximo")) || 9;
+
+  const beneficioAtual =
+    parseFloat(params.get("beneficioAtual")) || 5459.26;
+
+  const beneficioMax =
+    parseFloat(params.get("beneficioMax")) || 8234.90;
+
+  const saldoAtual =
+    parseFloat(params.get("saldoAtual")) || 1090821.65;
+
+  const saldoMax =
+    parseFloat(params.get("saldoMax")) || 1645427.48;
+
+  //const percentual =    Math.round((contribuicao / maximo) * 100);
+
+  const percentualBeneficio =
+    Math.round((beneficioAtual / beneficioMax) * 100);
+
+ // document.getElementById("nome").innerText =   nome;
+
+ document.getElementById("contribuicaoTexto").innerText =    contribuicao + "%";
+
+  document.getElementById("maximoTexto").innerText =
+    maximo + "%";
+
+//  document.getElementById("contribuicaoAtual").innerText =    contribuicao + "%";
+
+ // document.getElementById("contribuicaoMaxima").innerText =    maximo + "%";
+
+ // document.getElementById("barraContribuicao").style.width =    percentual + "%";
+
+//  document.getElementById("textoPotencial").innerText =    `Você utiliza ${percentual}% do seu potencial contributivo`;
+
+  document.getElementById("barraBeneficioAtual").style.width =
+    percentualBeneficio + "%";
+
+  document.getElementById("barraSaldoAtual").style.width =
+    percentualBeneficio + "%";
+
+
+document.getElementById("beneficioAtual").innerHTML =
+  "<strong>" + beneficioAtual.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  }) + "</strong>";
+
+
+  document.getElementById("beneficioMax").innerHTML =
+  "<strong>" +  beneficioMax.toLocaleString(
+      "pt-BR",
+      {
+        style:"currency",
+        currency:"BRL"
+      }
+    )+ "</strong>"; 
+
+
+document.getElementById("saldoAtual").innerHTML =
+  "<strong>" + saldoAtual.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  }) + "</strong>";
+
+
+
+document.getElementById("saldoMax").innerHTML =
+  "<strong>" + saldoMax.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  }) + "</strong>";
+
+
+
+
+
+const aumentoPercentualBeneficio =
+  ((beneficioMax - beneficioAtual) / beneficioAtual) * 100;
+
+const aumentoPercentualSaldo =
+  ((saldoMax - saldoAtual) / saldoAtual) * 100;
+
+
+const aumentoBeneficioFormatado =
+  aumentoPercentualBeneficio.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+const aumentoSaldoFormatado =
+  aumentoPercentualSaldo.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+
+document.getElementById("fraseBeneficio").innerHTML =
+  `<strong>${aumentoBeneficioFormatado}% de aumento</strong> na sua renda futura se você utilizar todo o potencial contributivo.`;
+
+//document.getElementById("fraseSaldo").innerHTML =  `<strong>${aumentoSaldoFormatado}% de aumento</strong> na sua renda futura se você utilizar todo o potencial contributivo.`;
+
+ 
+
+</script>
+
+</body>
+</html>
